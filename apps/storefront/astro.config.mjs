@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
-  site: process.env.SITE_URL || "https://example.com",
+  site: process.env.SITE_URL || "https://store.majalahpdf.my.id",
   output: "static",
   trailingSlash: "never",
   prefetch: {
@@ -23,4 +23,9 @@ export default defineConfig({
   image: {
     remotePatterns: [{ protocol: "https" }, { protocol: "http" }],
   },
+  
+  server: {
+    allowedHosts: ['.majalahpdf.my.id']
+  },
+  
 });
