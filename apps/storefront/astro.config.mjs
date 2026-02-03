@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
-  site: process.env.SITE_URL || "https://store.majalahpdf.my.id",
+  site: process.env.SITE_URL || "https://shop.majalahpdf.my.id",
   output: "static",
   trailingSlash: "never",
   prefetch: {
