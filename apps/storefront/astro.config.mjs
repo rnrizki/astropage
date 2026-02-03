@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import { visualizer } from "rollup-plugin-visualizer";
-import { defineConfig, passthroughImageService } from 'astro/config';
 
 export default defineConfig({
   site: process.env.SITE_URL || "https://store.majalahpdf.my.id",
@@ -23,10 +22,8 @@ export default defineConfig({
   },
   image: {
     remotePatterns: [{ protocol: "https" }, { protocol: "http" }],
-     service: passthroughImageService(),
   },
-
-   
+  
   server: {
     allowedHosts: ['.majalahpdf.my.id']
   },
