@@ -1,10 +1,11 @@
 
+import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import { visualizer } from "rollup-plugin-visualizer";
-import { defineConfig, passthroughImageService } from 'astro/config';
+
 
 export default defineConfig({
   site: process.env.SITE_URL || "https://shop.majalahpdf.my.id",
@@ -21,11 +22,8 @@ export default defineConfig({
       noExternal: ["@medusajs/js-sdk"],
     },
   },
-
   image: {
-    service: passthroughImageService()
-
-  
+    remotePatterns: [{ protocol: "https" }, { protocol: "http" }],
   },
   
   server: {
